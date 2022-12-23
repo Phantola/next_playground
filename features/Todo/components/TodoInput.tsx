@@ -17,6 +17,11 @@ const TodoInput: React.FC = () => {
         <button
           className="text-[10px] w-full bg-sky-300 text-sky-900"
           onClick={() => {
+            if (text.trim().length === 0) {
+              alert('Please enter a todo')
+              return
+            }
+
             setTodos([
               ...todos,
               {
