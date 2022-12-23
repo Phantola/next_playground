@@ -1,12 +1,14 @@
 import dayjs from 'dayjs'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Timer: React.FC = () => {
   const [time, setTime] = useState(dayjs().format('YYYY-MM-DD HH:mm:ss'))
 
-  setInterval(() => {
-    setTime(dayjs().format('YYYY-MM-DD HH:mm:ss'))
-  }, 1000)
+  useEffect(() => {
+    setInterval(() => {
+      setTime(dayjs().format('YYYY-MM-DD HH:mm:ss'))
+    }, 1000)
+  }, [])
 
   return (
     <>
